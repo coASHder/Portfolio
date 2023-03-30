@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your description">
+    <meta name="author" content="Your name">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+
+    <!-- Webpage Title -->
+    <title>My Portfolio</title>
+    
+    <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <link href="static/css/fontawesome-all.css" rel="stylesheet">
+	<link href="static/css/styles.css" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="static/images/Asharib-logo.png">
+
+    <!--    Animation   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="{{ url_for('home') }}"><img src="static/images/Asharib-_1_.svg" alt="alternative"></a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+<!--             <a class="navbar-brand logo-text page-scroll" href="index.html">Asharib</a>-->
+
+            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#header">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#projects">Projects</a>
+                    </li>
+<!--                    <li class="nav-item dropdown">-->
+<!--                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Drop</a>-->
+<!--                        <div class="dropdown-menu" aria-labelledby="dropdown01">-->
+<!--                            <a class="dropdown-item page-scroll" href="{{ url_for('projects') }}">Project Details</a>-->
+<!--                            <div class="dropdown-divider"></div>-->
+<!--                            <a class="dropdown-item page-scroll" href="terms.html">Terms Conditions</a>-->
+<!--                            <div class="dropdown-divider"></div>-->
+<!--                            <a class="dropdown-item page-scroll" href="privacy.html">Privacy Policy</a>-->
+<!--                        </div>-->
+<!--                    </li>-->
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+<!--                <span class="nav-item social-icons">-->
+<!--                    <span class="fa-stack">-->
+<!--                        <a href="#your-link">-->
+<!--                            <i class="fas fa-circle fa-stack-2x"></i>-->
+<!--                            <i class="fab fa-facebook-f fa-stack-1x"></i>-->
+<!--                        </a>-->
+<!--                    </span>-->
+<!--                    <span class="fa-stack">-->
+<!--                        <a href="#your-link">-->
+<!--                            <i class="fas fa-circle fa-stack-2x"></i>-->
+<!--                            <i class="fab fa-twitter fa-stack-1x"></i>-->
+<!--                        </a>-->
+<!--                    </span>-->
+<!--                </span>-->
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h1 class="h1-large">I am Asharib <br>A
+                            <span id="text1">Programmer.</span>
+                            <span style="display: none" id="text2">Student.</span>
+                        </h1>
+                        <a class="btn-solid-lg page-scroll" href="#about">Discover</a>
+                        <a class="btn-outline-lg page-scroll" href="#contact"><i class="fas fa-user"></i>Contact Me</a>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
+
+    <script>
+		var text1 = $("#text1");
+		var text2 = $("#text2");
+		var isHidden = false;
+
+		setInterval(function() {
+			if(!document.hidden) {
+				if(isHidden) {
+					text1.fadeOut(2000, function() {
+						text2.fadeIn(2000);
+						isHidden = false;
+					});
+				} else {
+					text2.fadeOut(1200, function() {
+						text1.fadeIn(1200);
+						isHidden = true;
+					});
+				}
+			}
+		}, 1000);
+	</script>
+
+
+    <!-- About-->
+    <div id="about" class="basic-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="text-container first">
+                        <h2>Hi there I'm Asharib,</h2>
+                        <p>A young motivated individual who has recently embarked on a career in computer science.
+                            I have a keen interest in Python and I aspire to become a successful data scientist
+                            or backend developer in the future.</p>
+                    </div> <!-- end of text-container -->
+
+
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-container second">
+                        <div class="time">2019 - 2020</div>
+                        <h6>O Levels</h6>
+                        <p>A*AABBCCC</p>
+                        <div class="time">2020 - 2022</div>
+                        <h6>A Levels</h6>
+                        <p>AAB</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-container third">
+                        <div class="time">2022</div>
+                        <h6>Work</h6>
+                        <p>Customer Support Specialists at Ibex Pakistan</p>
+                        <div class="time">2022 - 2023</div>
+                        <h6>Python Course</h6>
+                        <p>100 Days of Code: A complete Python Pro Bootcamp</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of about -->
+
+
+<!--    &lt;!&ndash; Services &ndash;&gt;-->
+<!--    <div id="services" class="basic-2">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-12">-->
+<!--                    <h2 class="h2-heading">Offered services</h2>-->
+<!--                    <p class="p-heading">Web design and development have been my bread and butter for more than 5 years. During that time I've discovered that I can help startups and companies with the following services</p>-->
+<!--                </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--            </div> &lt;!&ndash; end of row &ndash;&gt;-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-4">-->
+<!--                    <div class="text-box">-->
+<!--                        <i class="far fa-gem"></i>-->
+<!--                        <h4>DESIGN</h4>-->
+<!--                        <p>Successful online projects start with good design. It establishes a solid foundation for future development and allows for long term growth</p>-->
+<!--                    </div> &lt;!&ndash; end of text-box &ndash;&gt;-->
+<!--                </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--                <div class="col-lg-4">-->
+<!--                    <div class="text-box">-->
+<!--                        <i class="fas fa-code"></i>-->
+<!--                        <h4>DEVELOPMENT</h4>-->
+<!--                        <p>I can code my own designs or even use the customer's design as base. My focus is to generate clean code that's well structured for reliability</p>-->
+<!--                    </div> &lt;!&ndash; end of text-box &ndash;&gt;-->
+<!--                </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--                <div class="col-lg-4">-->
+<!--                    <div class="text-box">-->
+<!--                        <i class="fas fa-tv"></i>-->
+<!--                        <h4>BASIC SEO</h4>-->
+<!--                        <p>i can setup your project to use basic SEO principles which will push your project to the first page on search engines and save you ads money</p>-->
+<!--                    </div> &lt;!&ndash; end of text-box &ndash;&gt;-->
+<!--                </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--            </div> &lt;!&ndash; end of row &ndash;&gt;-->
+<!--        </div> &lt;!&ndash; end of container &ndash;&gt;-->
+<!--    </div> &lt;!&ndash; end of basic-2 &ndash;&gt;-->
+<!--    &lt;!&ndash; end of services &ndash;&gt;-->
+
+
+    <!-- Details -->
+	<div class="split">
+		<div class="area-1">
+		</div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2 bg-gray">
+            <div class="container">    
+                <div class="row">
+                    <div class="col-lg-12">     
+                        
+                        <!-- Text Container -->
+                        <div class="text-container">
+                            <h2>Why Work With Me</h2>
+                            <p>Hey there! I'm a passionate and driven individual who's always eager to learn and grow
+                                in the field of programming. I believe that hard work, perseverance, and a willingness
+                                to take on challenges are the keys to success, and I'm determined to apply these values
+                                to any internship or job that comes my way.</p>
+                            <h5>MY SKILLS</h5>
+                            <ul>
+                                <li> Web Scrapping With Beautiful Soup.</li>
+                                <li>Task Automation with Selenium Web Driver.</li>
+                                <li>Web Development with Flask.</li>
+                                <li>Data Analysing with Pandas/Matplotlib/Seaborn.</li>
+                            </ul>
+<!--                            <h5>DEVELOPMENT SKILLS</h5>-->
+<!--                            <p>I am familiar and work on a daily basis with HTML, CSS, JavaScript, Bootstrap and other modern frameworks</p>-->
+                            
+                            <div class="icons-container">
+<!--                                <img src="static/images/details-icon-photoshop.png" alt="alternative">-->
+<!--                                <img src="static/images/details-icon-illustrator.png" alt="alternative">-->
+                                <img src="static/images/details-icon-html.png" alt="alternative">
+                                <img src="static/images/details-icon-css.png" alt="alternative">
+                                <img src="static/images/details-icon-bootstrap.png" alt="alternative">
+                                <img src="static/images/python-icon.png" alt="alternative">
+<!--                                <img src="static/images/pandas-icon.png" alt="alternative">-->
+                                <img src="static/images/seaborn-icon.svg" alt="alternative">
+                                <img src="static/images/flask-icon.png" alt="alternative">
+                                <img src="static/images/se-icon.png" alt="alternative">
+                            </div> <!-- end of icons-container -->
+                        </div> <!-- end of text-container -->
+                        <!-- end of text container -->
+
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+		</div> <!-- end of area-2 -->
+    </div> <!-- end of split -->
+    <!-- end of details -->
+
+
+    <!-- Projects -->
+    <div id="projects" class="basic-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="h2-heading">Projects</h1>
+                    <p class="p-heading">Listed below are some of the projects I've made.</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="{{ url_for('projects', id=1) }}">
+                                <img class="img-fluid" src="static/images/screenshot1.png" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        <p><strong>Project:</strong> Personal blog, <strong>Project:</strong> A Blog Site made using Flask
+                            <a class="blue" href="{{ url_for('projects', id=1) }}">details</a></p>
+                    </div> <!-- end of text-container -->
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="{{ url_for('projects', id=2) }}">
+                                <img class="img-fluid" src="static/images/tindog-ss.png" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        <p><strong>Project:</strong> Basic Web Design, <strong>Project:</strong> Design a modern platform for downloading an app  <a class="blue" href="{{ url_for('projects', id=2) }}">details</a></p>
+                    </div> <!-- end of text-container -->
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="{{ url_for('projects', id=3) }}">
+                                <img class="img-fluid" src="static/images/movie-ss.png" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        <p><strong>Project:</strong> Basic Card Website, <strong>Project:</strong> Create a Interactive Movie Card Web page <a class="blue" href="{{ url_for('projects', id=3) }}">details</a></p>
+                    </div> <!-- end of text-container -->
+<!--                    <div class="text-container">-->
+<!--                        <div class="image-container">-->
+<!--                            <a href="url_for('projects')">-->
+<!--                                <img class="img-fluid" src="static/images/project-4.jpg" alt="alternative">-->
+<!--                            </a>-->
+<!--                        </div> &lt;!&ndash; end of image-container &ndash;&gt;-->
+<!--                        <p><strong>For:</strong> Evolosim, <strong>Project:</strong> complete redesign of their corporate website and platform update for their online shop <a class="blue" href="url_for('projects')">details</a></p>-->
+<!--                    </div> &lt;!&ndash; end of text-container &ndash;&gt;-->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-3 -->
+    <br>
+    <br>
+    <!-- end of projects -->
+
+
+    <!-- Works -->
+    <div class="basic-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" style="text-align: center;">
+                    <h2>Web Scrapping and Automation</h2>
+                    <p>Below are some projects I executed with Bs4 and Se</p>
+                    <br>
+                </div>
+                <div class="col-lg-4">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="{{ url_for('projects', id=4) }}">
+                                <img class="img-fluid" src="static/images/playlists-ss.png" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        <p><strong>Project:</strong> Create a spotify playlists using spotify api and web scrapping <a class="blue" href="{{ url_for('projects', id=4) }}">details</a></p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="{{ url_for('projects', id=5) }}">
+                                <img class="img-fluid" src="static/images/linkedin-ss.png" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        <p><strong>Project:</strong> Automate applying to job using Selenium <a class="blue" href="{{ url_for('projects', id=5) }}">details</a></p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="{{ url_for('projects', id=6) }}">
+                                <img class="img-fluid" src="static/images/twitter-ss.png" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        <p><strong>Project:</strong> Automate tweeting on twitter using Selenium <a class="blue" href="{{ url_for('projects', id=6) }}">details</a></p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-4">-->
+<!--                    <div class="text-container">-->
+<!--                        <div class="image-container">-->
+<!--                            <a href="{{ url_for('projects', id=7) }}">-->
+<!--                                <img class="img-fluid" src="static/images/work-4.jpg" alt="alternative">-->
+<!--                            </a>-->
+<!--                        </div> &lt;!&ndash; end of image-container &ndash;&gt;-->
+<!--                        <p><strong>For:</strong> Nextlite, <strong>Project:</strong> created a custom video editing and upload web app <a class="blue" href="{{ url_for('projects', id=7) }}">details</a></p>-->
+<!--                    </div> &lt;!&ndash; end of text-container &ndash;&gt;-->
+<!--                </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--                <div class="col-lg-4">-->
+<!--                    <div class="text-container">-->
+<!--                        <div class="image-container">-->
+<!--                            <a href="{{ url_for('projects', id=8) }}">-->
+<!--                                <img class="img-fluid" src="static/images/work-5.jpg" alt="alternative">-->
+<!--                            </a>-->
+<!--                        </div> &lt;!&ndash; end of image-container &ndash;&gt;-->
+<!--                        <p><strong>For:</strong> Syncnow, <strong>Project:</strong> web design for their corporate websites and landing pages <a class="blue" href="{{ url_for('projects', id=8) }}">details</a></p>-->
+<!--                    </div> &lt;!&ndash; end of text-container &ndash;&gt;-->
+<!--                </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--                <div class="col-lg-4">-->
+<!--                    <div class="text-container">-->
+<!--                        <div class="image-container">-->
+<!--                            <a href="{{ url_for('projects', id=9) }}">-->
+<!--                                <img class="img-fluid" src="static/images/work-6.jpg" alt="alternative">-->
+<!--                            </a>-->
+<!--                        </div> &lt;!&ndash; end of image-container &ndash;&gt;-->
+<!--                        <p><strong>For:</strong> Shifter, <strong>Project:</strong> started a new website from ground up for a new product <a class="blue" href="{{ url_for('projects', id=9) }}">details</a></p>-->
+<!--                    </div> &lt;!&ndash; end of text-container &ndash;&gt;-->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-4 -->
+    <!-- end of works -->
+
+
+    <!-- Testimonials -->
+<!--    <div class="cards-1">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-12">-->
+<!--                    <h2 class="h2-heading">A few words from people that chose to work with me</h2>-->
+<!--                </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--            </div> &lt;!&ndash; end of row &ndash;&gt;-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-12">-->
+<!--                    -->
+<!--                    &lt;!&ndash; Card &ndash;&gt;-->
+<!--                    <div class="card">-->
+<!--                        <div class="card-body">-->
+<!--                            <p class="testimonial-text">“Mark is a skilled developer which will do everything possible to deliver the project on time and I really appreciate that”</p>-->
+<!--                            <div class="details">-->
+<!--                                <img src="static/images/testimonial-1.jpg" alt="alternative">-->
+<!--                                <div class="text">-->
+<!--                                    <div class="testimonial-author">Samantha Bloom</div>-->
+<!--                                    <div class="occupation">Team Leader - Syncnow</div>-->
+<!--                                </div> &lt;!&ndash; end of text &ndash;&gt;-->
+<!--                            </div> &lt;!&ndash; end of testimonial-details &ndash;&gt;-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; end of card &ndash;&gt;-->
+
+<!--                    &lt;!&ndash; Card &ndash;&gt;-->
+<!--                    <div class="card">-->
+<!--                        <div class="card-body">-->
+<!--                            <p class="testimonial-text">“Loved to work with Mark he's such an awesome developer with great attention to details. He also has a great eye for design”</p>-->
+<!--                            <div class="details">-->
+<!--                                <img src="static/images/testimonial-2.jpg" alt="alternative">-->
+<!--                                <div class="text">-->
+<!--                                    <div class="testimonial-author">John Rowling</div>-->
+<!--                                    <div class="occupation">Marketing Manager - Nexlite</div>-->
+<!--                                </div> &lt;!&ndash; end of text &ndash;&gt;-->
+<!--                            </div> &lt;!&ndash; end of testimonial-details &ndash;&gt;-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; end of card &ndash;&gt;-->
+
+<!--                    &lt;!&ndash; Card &ndash;&gt;-->
+<!--                    <div class="card">-->
+<!--                        <div class="card-body">-->
+<!--                            <p class="testimonial-text">“So glad we started working with Mark. We've used many times his design and development skills for our inhouse online projects”</p>-->
+<!--                            <div class="details">-->
+<!--                                <img src="static/images/testimonial-3.jpg" alt="alternative">-->
+<!--                                <div class="text">-->
+<!--                                    <div class="testimonial-author">Lana Smith</div>-->
+<!--                                    <div class="occupation">General Manager - Shifter</div>-->
+<!--                                </div> &lt;!&ndash; end of text &ndash;&gt;-->
+<!--                            </div> &lt;!&ndash; end of testimonial-details &ndash;&gt;-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; end of card &ndash;&gt;-->
+
+<!--                </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--            </div> &lt;!&ndash; end of row &ndash;&gt;-->
+<!--        </div> &lt;!&ndash; end of container &ndash;&gt;-->
+<!--    </div> &lt;!&ndash; end of cards-1 &ndash;&gt;-->
+    <!-- end of testimonials -->
+
+
+    <!-- Section Divider -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <hr class="section-divider">
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+    <!-- end of section divider -->
+
+
+    <!-- Questions -->
+<!--    <div class="accordion-1">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-12">-->
+<!--                    <h2 class="h2-heading">Frequent questions</h2>-->
+<!--                </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--            </div> &lt;!&ndash; end of row &ndash;&gt;-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-12">-->
+
+<!--                    <div class="accordion" id="accordionExample">-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header" id="headingOne">-->
+<!--                                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">-->
+<!--                                    How can I contact you and quickly get a quote for my online project?-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">-->
+<!--                                <div class="card-body">-->
+<!--                                    The best way to reach me is through the contact form of by messaging me on my social media accounts. For a fast quote make sure your provide many project details-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header" id="headingTwo">-->
+<!--                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">-->
+<!--                                    Do you create designs from the ground up or you are using themes?-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">-->
+<!--                                <div class="card-body">-->
+<!--                                    The best way to reach me is through the contact form of by messaging me on my social media accounts. For a fast quote make sure your provide many project details-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header" id="headingThree">-->
+<!--                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">-->
+<!--                                    Will I receive any included maintenance or warranty after project delivery?-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">-->
+<!--                                <div class="card-body">-->
+<!--                                    The best way to reach me is through the contact form of by messaging me on my social media accounts. For a fast quote make sure your provide many project details-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header" id="headingFour">-->
+<!--                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">-->
+<!--                                    If something goes wrong with the project can I have my money back?-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">-->
+<!--                                <div class="card-body">-->
+<!--                                    The best way to reach me is through the contact form of by messaging me on my social media accounts. For a fast quote make sure your provide many project details-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header" id="headingFive">-->
+<!--                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">-->
+<!--                                    What's your preferred method of payment and do you need an advance?-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">-->
+<!--                                <div class="card-body">-->
+<!--                                    The best way to reach me is through the contact form of by messaging me on my social media accounts. For a fast quote make sure your provide many project details-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div> &lt;!&ndash; end of accordion &ndash;&gt;-->
+
+<!--                </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--            </div> &lt;!&ndash; end of row &ndash;&gt;-->
+<!--        </div> &lt;!&ndash; end of container &ndash;&gt;-->
+<!--    </div> &lt;!&ndash; end of accordion-1 &ndash;&gt;-->
+    <!-- end of questions -->
+
+
+    <!-- Contact -->
+    <div id="contact" class="form-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Contact Me</h2>
+                    <p class="p-heading">If you love football like I do, then don't hesitate to get in touch with me. The fastest way is to send me your message using the following email <a class="blue no-line" href="mailto:asharibh32@gmail.com">asharibh32@gmail.com</a></p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- Contact Form -->
+                    <form id="contactForm" method="post" action="/submit">
+                        <div class="form-group">
+                            <input name="name" type="text" class="form-control-input" id="cname" required>
+                            <label class="label-control" for="cname">Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input name="email" type="email" class="form-control-input" id="cemail" required>
+                            <label class="label-control" for="cemail">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="msg" class="form-control-textarea" id="cmessage" required></textarea>
+                            <label class="label-control" for="cmessage">Your Message</label>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control-submit-button">Submit</button>
+                        </div>
+                    </form>
+                    <!-- end of contact form -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of form-1 -->  
+    <!-- end of contact -->
+
+
+    <!-- Footer -->
+    <div class="footer bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="social-container">
+                        <span class="fa-stack">
+                            <a href="https://www.facebook.com/asharib.hussain.39?mibextid=LQQJ4d">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="https://www.linkedin.com/in/muhammad-asharib-hussain-2b3944242">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x"></i>
+                            </a>
+                        </span>
+<!--                        <span class="fa-stack">-->
+<!--                            <a href="#your-link">-->
+<!--                                <i class="fas fa-circle fa-stack-2x"></i>-->
+<!--                                <i class="fab fa-pinterest-p fa-stack-1x"></i>-->
+<!--                            </a>-->
+<!--                        </span>-->
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="https://github.com/coASHder">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x"></i>
+                            </a>
+                        </span>
+                    </div> <!-- end of social-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
+
+
+    <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+<!--                    <p class="p-small">Copyright © <a class="no-line" href="#your-link">Asharib Hussain</a></p>-->
+                    <p class="p-small">Copyright © Asharib Hussain</p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-12">-->
+<!--                    <p class="p-small">Distributed By <a class="no-line" href="https://themewagon.com/">Themewagon</a></p>-->
+<!--                </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--            </div> &lt;!&ndash; enf of row &ndash;&gt;-->
+<!--        </div> &lt;!&ndash; end of container &ndash;&gt;-->
+        
+<!--    </div> &lt;!&ndash; end of copyright &ndash;&gt; -->
+    <!-- end of copyright -->
+    
+    	
+    <!-- Scripts -->
+    <script src="static/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="static/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="static/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="static/js/scripts.js"></script> <!-- Custom scripts -->
+</body>
+</html>
